@@ -14,6 +14,7 @@ class JenkinsCourseApplicationTests {
 
 	@Test
 	void testingSuccess(){
+		System.out.println("Hello World");
 		assertTrue(true);
 	}
 
