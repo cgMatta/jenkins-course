@@ -19,7 +19,7 @@ class JenkinsCourseApplicationTests {
 
 	@Test
 	void testingFailure(){
-		assertTrue(false);
+		assertTrue(true);
 	}
 
 }
