@@ -22,4 +22,9 @@ class JenkinsCourseApplicationTests {
 		assertTrue(true);
 	}
 
+	@Test
+	void anotherTest(){
+		assertTrue(true);
+	}
+
 }
