@@ -1,24 +1,25 @@
 // Jenkins File
 
 pipeline {
-
     agent any
 
     environment {
-        MY_ENV_VAR = ' custome value'
+        MY_ENV_VAR = 'custom value'
 
     }
 
     stages {
         stage('checkout') {
             steps {
-                def gitRepoUrl = 'https://github.com/cgMatta/jenkins-course.git'
+                script {
+                    def gitRepoUrl = 'https://github.com/cgMatta/jenkins-course.git'
 
-                checkout([ $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[url: gitRepoUrl]],
-                    extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CloneOption', noTags: false, shallow: true, depth: 1]]
-                ])
+                    checkout([ $class: 'GitSCM',
+                               branches: [[name: '*/main']],
+                               userRemoteConfigs: [[url: gitRepoUrl]],
+                               extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CloneOption', noTags: false, shallow: true, depth: 1]]
+                    ])
+                }
             }
         }
 
