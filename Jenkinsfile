@@ -40,7 +40,7 @@ pipeline {
 
         stage('deploy') {
             steps {
-                sh 'echo "I deploy stage: value of ENV var is: "$env.MY_ENV_VAR""'
+                sh 'echo "I deploy stage: value of ENV var is: ${env.MY_ENV_VAR}"'
             }
         }
     }
